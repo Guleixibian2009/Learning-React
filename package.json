@@ -1,0 +1,22 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "My First React Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guleixibian2009/Learning-React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Guleixibian2009",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Guleixibian2009/Learning-React/issues"
+  },
+  "homepage": "https://github.com/Guleixibian2009/Learning-React#readme"
+}
