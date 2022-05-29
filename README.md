@@ -44,3 +44,7 @@ Then you should see:
 
 Visit port 3000 and you should see the stable version of the project.
 Yay!
+
+## LICENSE
+This project is GPL-3.0 licensed.
+Plus, Bootstrap is under the MIT license. (See `/build/css` after `npm run build` or peek `/src` in the repo.)
