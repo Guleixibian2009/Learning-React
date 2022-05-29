@@ -4,7 +4,7 @@
   "description": "My First React Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd ui-example && npm start"
   },
   "repository": {
     "type": "git",

@@ -48,3 +48,4 @@ Yay!
 ## LICENSE
 This project is GPL-3.0 licensed.
 Plus, Bootstrap is under the MIT license. (See `/build/css` after `npm run build` or peek `/src` in the repo.)
+Changed for a little little bit since `npm start` will warn me for unknown name `color-adjust`(actually `print-color-adjust`).
