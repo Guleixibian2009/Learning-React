@@ -13,9 +13,17 @@ npm start
 ## UI-Example (In Progress)
 My **real** first `React` project. Re-designed parts of a webpage using `Bootstrap`.
 
+To see dev version:
+```bash
+cd ui-example
+npm install
+npm start
+```
+
 To see stable:
 ```bash
 cd ui-example
+npm run build
 npm install -g serve
 serve -s build
 ```
@@ -35,18 +43,4 @@ Then you should see:
 ```
 
 Visit port 3000 and you should see the stable version of the project.
-
-To see dev version:
-```bash
-cd ui-example
-npm install
-npm start
-```
-
-To build the project into `/build`:
-```bash
-npm run build
-```
-
-Then you can run the project as stable.
 Yay!
