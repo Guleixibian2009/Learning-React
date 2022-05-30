@@ -3,6 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './bootstrap.min.css'
 
+class UsrAvatar extends React.Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            usrname: this.props.name,
+            avatarLink: `http://localhost: 3000/avatar/${this.props.name}.jpg`
+        }
+    }
+
+    render() {
+        return (
+            <img 
+                src={this.state.avatarLink}
+                alt={this.state.usrname}
+                height="32px"
+                width="32px"
+                style="border-radius: 50%"
+            />
+        )
+    }
+}
+
 class Comment extends React.Component{
     constructor(props) {
         super(props)
@@ -10,6 +32,13 @@ class Comment extends React.Component{
             usrname : this.props.name,
             comment : ""
         }
+    }
+
+    componentDidMount(props) {
+        var comment = `This is comment from ${this.state.usrname}!`
+        this.setState({
+            comment: comment
+        });
     }
 
     getTime(){
