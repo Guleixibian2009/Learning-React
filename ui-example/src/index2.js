@@ -15,6 +15,17 @@ class Comment extends React.Component{
     getTime(){
         return new Date().toLocaleDateString()
     }
+
+    render() {
+        <div className='border border-1 bg-white p-3'>
+            <div className='d-flexflex-row'>
+                <UsrAvatar username={this.state.usrname} />
+                <span>{this.state.usrname}</span>
+            </div>
+            <p>{this.state.comment}</p>
+            <p className='text-muted'>{this.getTime()}</p>
+        </div>
+    }
 }
 
 class Main extends React.Component{
