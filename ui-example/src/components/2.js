@@ -5,7 +5,7 @@ export class UsrAvatar extends React.Component{
         super(props)
         this.state = {
             usrname: this.props.name,
-            avatarLink: `http://localhost:3000/avatar/${this.props.name}.png`,
+            avatarLink: `http://${window.location.host}/avatar/${this.props.name}.png`,
             gotAvatar: false
         }
     }
