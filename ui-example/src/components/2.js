@@ -14,7 +14,7 @@ export class UsrAvatar extends React.Component{
         var xhr = new XMLHttpRequest();
         const component = this;
         xhr.onloadend = function(){
-            if (xhr.status === 200)  {
+            if (xhr.status === 200 && xhr.readyState === 4)  {
                 component.setState({
                     gotAvatar: true
                 });
@@ -25,7 +25,7 @@ export class UsrAvatar extends React.Component{
             }
         }
         xhr.open("GET", this.state.avatarLink);
-        xhr.setRequestHeader("accept", "image/png");
+        xhr.setRequestHeader("Accept", "image/png");
         xhr.send();
     }
 

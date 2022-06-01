@@ -20,32 +20,7 @@ npm install
 npm start
 ```
 
-To see stable:
-```bash
-cd ui-example
-npm run build
-npm install -g serve
-serve -s build
-```
-
-Then you should see:
-```
-┌──────────────────────────────────────────────────┐
-│                                                  │
-│   Serving!                                       │
-│                                                  │
-│   - Local:            http://localhost:3000      │
-│   - On Your Network:  http://**.**.**.**:3000    │
-│                                                  │
-│   Copied local address to clipboard!             │
-│                                                  │
-└──────────────────────────────────────────────────┘
-```
-
-Visit port 3000 and you should see the stable version of the project.
-Yay!
-
 ## LICENSE
 This project is GPL-3.0 licensed.
-Plus, Bootstrap is under the MIT license. (See `/build/css` after `npm run build` or peek `/src` in the repo.)
+Plus, Bootstrap is under the MIT license. (See `/src` in the repo.)
 Changed for a little little bit since `npm start` will warn me for unknown name `color-adjust`(actually `print-color-adjust`).

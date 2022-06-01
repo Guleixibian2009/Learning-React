@@ -24,11 +24,11 @@ export class Spinner extends React.Component{
     render() {
         return (
             <div 
-                className='border-0 d-grid ps-2 pt-1'
+                className='border-0 ps-2 pt-2'
                 style={{
                     height: this.props.outerHeight,
                     width: this.props.outerHeight,
-                    placeContent: "center !important"
+                    marginRight: "5px"
                 }}
             >
                 <div 
