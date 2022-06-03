@@ -1,48 +1,8 @@
 import React from 'react';
-import jQuery from 'jquery';
-import { Spinner } from './common.js'
 
-const $ = jQuery;
+import {UsrAvatar} from './common.js'
 
-export class UsrAvatar extends React.Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-            usrname: this.props.name,
-            avatarLink: `http://${window.location.host}/avatar/${this.props.name}.png`,
-            gotAvatar: false
-        }
-    }
 
-    componentDidMount(){
-        const component = this;
-        $.ajax({
-            url:this.state.avatarLink, 
-            success:function(){
-                component.setState({
-                    gotAvatar: true
-                });
-            }, 
-            error: function(){
-                component.setState({
-                    gotAvatar: false
-                });
-            },
-            headers: {
-                "Accept": "image/png",
-            },
-            cache: false
-        });
-    }
-
-    render() {
-        if (this.state.gotAvatar) {
-            return <img src={this.state.avatarLink} alt={this.state.usrname} height="32px" width="32px" style={{borderRadius: "50%", marginRight: "5px", display: "inline-block"}} />
-        } else {
-            return <Spinner outerHeight="32px" innerHeight="18px" />
-        }
-    }
-}
 
 export class Comment extends React.Component{
     constructor(props) {
@@ -81,7 +41,7 @@ export class Comment extends React.Component{
 export class CommentGroup extends React.Component{
     render() {
         return (
-            <div className='ps-5'>
+            <div>
                 <Comment name="Gulei" />
                 <Comment name="GitHub" />
                 <Comment name="Someone else" />

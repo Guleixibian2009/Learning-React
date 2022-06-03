@@ -5,6 +5,7 @@ import './bootstrap.min.css'
 import {ErrorBoundary} from './components/common';
 import {Input, Hello} from './components/1';
 import {CommentGroup} from './components/2';
+import {Card} from './components/3';
 
 
 class Main extends React.Component{
@@ -22,6 +23,11 @@ class Main extends React.Component{
                 <ErrorBoundary>
                     <h2>Comments</h2>
                     <CommentGroup />
+                </ErrorBoundary>
+                <hr />
+                <ErrorBoundary>
+                    <h2>Cards</h2>
+                    <Card dir="hor-img-left" />
                 </ErrorBoundary>
             </main>
         )

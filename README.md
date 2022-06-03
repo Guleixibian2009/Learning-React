@@ -51,9 +51,9 @@ Available on:
 Hit CTRL-C to stop the server
 ```
 
-Visit port 8080 and you should see the stable version of the project.
-(P.S. You can also use `serve`(which is recommended by `npm run build`) to set up a server but **Remember to `cd build` first or there will be errors(return 200 on nonexistent files)**)
-Yay!
+Visit port 8080 and you should see the stable version of the project. Yay!
+> (P.S. You can also use `serve`(which is recommended by `npm run build`) to set up a server but **Remember to `cd build` first or there will be errors(return 200 on nonexistent files)**)
+
 
 ## LICENSE
 This project is GPL-3.0 licensed.

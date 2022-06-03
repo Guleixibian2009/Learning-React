@@ -1,4 +1,6 @@
 import React from 'react';
+import jQuery from 'jquery';
+const $ = jQuery;
 export class ErrorBoundary extends React.Component {
     constructor(props) {
       super(props);
@@ -40,5 +42,45 @@ export class Spinner extends React.Component{
                 />
             </div>
         )
+    }
+}
+
+export class UsrAvatar extends React.Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            usrname: this.props.name,
+            avatarLink: `http://${window.location.host}/avatar/${this.props.name}.png`,
+            gotAvatar: false
+        }
+    }
+
+    componentDidMount(){
+        const component = this;
+        $.ajax({
+            url:this.state.avatarLink, 
+            success:function(){
+                component.setState({
+                    gotAvatar: true
+                });
+            }, 
+            error: function(){
+                component.setState({
+                    gotAvatar: false
+                });
+            },
+            headers: {
+                "Accept": "image/png",
+            },
+            cache: false
+        });
+    }
+
+    render() {
+        if (this.state.gotAvatar) {
+            return <img src={this.state.avatarLink} alt={this.state.usrname} height="32px" width="32px" style={{borderRadius: "50%", marginRight: "5px", display: "inline-block"}} />
+        } else {
+            return <Spinner outerHeight="32px" innerHeight="18px" />
+        }
     }
 }
