@@ -1,5 +1,9 @@
 import React from 'react';
+import jQuery from 'jquery';
 import { Spinner } from './common.js'
+
+const $ = jQuery;
+
 export class UsrAvatar extends React.Component{
     constructor(props) {
         super(props)
@@ -11,22 +15,24 @@ export class UsrAvatar extends React.Component{
     }
 
     componentDidMount(){
-        var xhr = new XMLHttpRequest();
         const component = this;
-        xhr.onloadend = function(){
-            if (xhr.status === 200 && xhr.readyState === 4)  {
+        $.ajax({
+            url:this.state.avatarLink, 
+            success:function(){
                 component.setState({
                     gotAvatar: true
                 });
-            } else {
+            }, 
+            error: function(){
                 component.setState({
                     gotAvatar: false
                 });
-            }
-        }
-        xhr.open("GET", this.state.avatarLink);
-        xhr.setRequestHeader("Accept", "image/png");
-        xhr.send();
+            },
+            headers: {
+                "Accept": "image/png",
+            },
+            cache: false
+        });
     }
 
     render() {
