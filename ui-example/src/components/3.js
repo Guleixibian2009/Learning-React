@@ -1,8 +1,6 @@
 import React from 'react';
 import {UsrAvatar} from './common';
 
-const lipsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
 export class CardImage extends React.Component{
     constructor(props){
         super(props);
@@ -21,7 +19,7 @@ export class CardImage extends React.Component{
             });
         } else if (this.state.direction === 'ver'){
             this.setState({
-                height: '50%',
+                height: '333px',
                 width: "100%"
             });
         } else {
@@ -48,8 +46,8 @@ class CardBody extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            height: "100%",
-            width: "100%"
+            height: "",
+            width: ""
         }
     }
 
@@ -57,7 +55,22 @@ class CardBody extends React.Component{
         switch (this.props.direction) {
             case "hor":
                 this.setState({
-                    width: "50%"
+                    width: "50%",
+                    height: "100%"
+                });
+                break;
+
+            case "ver":
+                this.setState({
+                    height: "auto",
+                    width: "100%"
+                });
+                break;
+
+            case "ful":
+                this.setState({
+                    height: "100%",
+                    width: "100%"
                 });
                 break;
         
@@ -86,7 +99,7 @@ class CardBody extends React.Component{
                         {this.props.usrName}
                     </span>
                 </div>
-                <p className='m-0'>{lipsum}{lipsum}{lipsum}</p>
+                <p className='m-0'>{this.props.content}</p>
             </div>
         )
     }
@@ -96,11 +109,40 @@ export class Card extends React.Component{
     render(){
         if (this.props.dir === "hor-img-left") {
             return(
-                <div className='border border-1 rounded rounded-5 d-flex flex-row' style={{height: "300px"}}>
-                    <CardImage direction="hor" url="https://s4.ax1x.com/2022/02/05/HniRun.jpg" />
-                    <CardBody direction="hor" usrName="Gulei" />
+                <div className='border border-1 rounded rounded-5 d-flex flex-row mb-3' style={{height: "300px"}}>
+                    <CardImage direction="hor" url={this.props.url} />
+                    <CardBody direction="hor" usrName="Gulei" content={this.props.content} />
                 </div>
             );
+        } else if (this.props.dir === "ver-img-top") {
+            return(
+                <div 
+                    className='border border-1 rounded rounded-5 d-flex flex-column mb-3 mx-md-3'
+                    style={{
+                        flexBasis: "33%"
+                    }}
+                >
+                    <CardImage direction="ver" url={this.props.url} />
+                    <CardBody direction="ver" usrName="GitHub" content={this.props.content} />
+                </div>
+            )
+        } else if (this.props.dir === "ver-img-bot") {
+            return(
+                <div className='border border-1 rounded rounded-5 d-flex flex-column mb-3 mx-md-3' style={{
+                    flexBasis: "33%"
+                }}>
+                    <CardBody direction="ver" usrName="GitHub" content={this.props.content} />
+                    <CardImage direction="ver" url={this.props.url} />
+                </div>
+            )
+        } else if (this.props.dir === "ver-text-ful") {
+            return(
+                <div className='border border-1 rounded rounded-5 d-flex flex-column mb-3 mx-md-3' style={{
+                    flexBasis: "33%"
+                }}>
+                    <CardBody direction="ful" usrName="GitHub" content={this.props.content} />
+                </div>
+            )
         }
     }
 }
