@@ -7,6 +7,8 @@ import {Input, Hello} from './components/1';
 import {CommentGroup} from './components/2';
 import {Card} from './components/3';
 import {Timer, HitoGroup} from './components/4';
+import {TipBox} from './components/5';
+import {MarkdownEditor} from './components/6';
 
 const lipsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 const lipsumShort = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
@@ -46,6 +48,18 @@ class Main extends React.Component{
                     <div>
                         <HitoGroup />
                     </div>
+                </ErrorBoundary>
+                <hr />
+                <ErrorBoundary>
+                    <h2>Tipboxes for tips</h2>
+                    <TipBox bgColor="rgba(255,229,100,0.3)" bdColor="rgb(255,229,100)" />
+                    <TipBox bgColor="rgba(255,35,35,0.3)" bdColor="rgb(255,35,35)" />
+                    <TipBox bgColor="rgba(35,108,255,0.3)" bdColor="rgb(35,108,255)" />
+                </ErrorBoundary>
+                <hr />
+                <ErrorBoundary>
+                    <h2>Real-time Markdown Editor</h2><small>From the offical site!</small>
+                    <MarkdownEditor />
                 </ErrorBoundary>
             </main>
         )
