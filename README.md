@@ -10,7 +10,7 @@ npm install
 npm start
 ```
 
-## UI-Example (In Progress)
+## UI-Example (Done)
 My **real** first `React` project. Re-designed parts of a webpage using `Bootstrap`.
 
 To see dev version:

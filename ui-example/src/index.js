@@ -58,7 +58,8 @@ class Main extends React.Component{
                 </ErrorBoundary>
                 <hr />
                 <ErrorBoundary>
-                    <h2>Real-time Markdown Editor</h2><small>From the offical site!</small>
+                    <h2>Real-time Markdown Editor</h2>
+                    <h3>From the offical site!</h3>
                     <MarkdownEditor />
                 </ErrorBoundary>
             </main>

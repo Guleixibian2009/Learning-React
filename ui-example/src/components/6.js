@@ -20,7 +20,7 @@ export class MarkdownEditor extends React.Component {
     render() {
       return (
         <div className="MarkdownEditor">
-          <h3>Input</h3>
+          <h4>Input</h4>
           <label htmlFor="markdown-content">
             Enter some markdown
           </label>
@@ -31,7 +31,7 @@ export class MarkdownEditor extends React.Component {
             defaultValue={this.state.value}
             style={{resize: "none", height: "300px", width:"100%"}}
           />
-          <h3>Output</h3>
+          <h4>Output</h4>
           <div
             className="content"
             dangerouslySetInnerHTML={this.getRawMarkup()}
